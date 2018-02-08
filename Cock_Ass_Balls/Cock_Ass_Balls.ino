@@ -1,46 +1,56 @@
 #include <TrinketKeyboard.h>
 
-const int MINUTES = 1;
-const int interval = 1000 * MINUTES;
+const int LED_PIN = 1;
+
+const int interval = 1000 * 20;
 unsigned long last;
 
 void setup() {
+  last = millis();
+  pinMode(LED_PIN, OUTPUT);
   TrinketKeyboard.begin();
+  
   randomSeed(analogRead(0));
-  while (TrinketKeyboard.isConnected() == 0); //wait for connection
-  TrinketKeyboard.println("Cock Ass Balls!");
+
 }
 
 void loop() {
     TrinketKeyboard.poll();
     
     if(last+interval < millis()) {
-      altTab();          
-      
-      // 2/15 chance of cockassballs
+      digitalWrite(LED_PIN, HIGH); 
+
+      // 1/15 chance of cockassballs
       switch(random(1,15)) {
+        case 1:
         case 2:
         case 3:
-            cockAssBalls();          
+        case 4:
+        case 5:
+            randomChar();             
+            break;
+        case 10:
+            cockAssBalls();     
             break;          
         default:
-          randomChar();
-          break;          
+          altTab();
+          break;         
       }
       last = millis();
     }
-
     delay(5);
+    digitalWrite(LED_PIN, LOW); 
 }
 
 
 void randomChar() {
-    TrinketKeyboard.typeChar((char)random(33, 122));
+  TrinketKeyboard.typeChar((char)random(33, 122));  
 }
 
 void cockAssBalls() {
   TrinketKeyboard.println("Cock Ass Balls!");
 }
+
 
 void altTab() {
     //WINDOWS
