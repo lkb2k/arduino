@@ -1,0 +1,13 @@
+power: Decoded NEC(1): Value:40BE629D Adrs:0 (32 bits) 
+menu: Decoded NEC(1): Value:40BEE21D Adrs:0 (32 bits) 
+0: Decoded NEC(1): Value:40BE00FF Adrs:0 (32 bits) 
+down: Decoded NEC(1): Value:40BE00FF Adrs:0 (32 bits) 
+up: Decoded NEC(1): Value:40BEB24D Adrs:0 (32 bits) 
+left: Decoded NEC(1): Value:40BE728D Adrs:0 (32 bits) 
+right: Decoded NEC(1): Value:40BE926D Adrs:0 (32 bits) 
+ok: Decoded NEC(1): Value:40BE52AD Adrs:0 (32 bits) 
+
+
+
+
+
